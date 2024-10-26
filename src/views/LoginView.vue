@@ -10,7 +10,7 @@ const login = () => {
 </script>
 
 <template>
-    <h1>RegisterView</h1>
+    <h1>LoginView</h1>
 
     <form @submit.prevent="login">
         <p>Username: <input type="text" required v-model="username"></p>

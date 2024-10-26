@@ -1,6 +1,7 @@
 <template>
     <nav>
         <router-link :to="{ name: 'HomeView' }">Home</router-link> |
+        <router-link :to="{ name: 'AppView' }">App</router-link> |
         <router-link :to="{ name: 'LoginView' }">Login</router-link> |
         <router-link :to="{ name: 'RegisterView' }">Register</router-link> |
         <router-link :to="{ name: 'AccountView' }">Account</router-link>
