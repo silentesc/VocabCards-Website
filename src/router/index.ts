@@ -13,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
         component: HomeView,
     },
     {
-        path: '/app/',
+        path: '/app',
         name: 'AppView',
         component: AppView,
         meta: { requiresAuth: true }
