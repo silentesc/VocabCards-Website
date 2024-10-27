@@ -1,4 +1,4 @@
 <template>
-    <h1>CollectionComponent</h1>
+    <h1>CollectionsComponent</h1>
     <!-- TODO -->
 </template>
