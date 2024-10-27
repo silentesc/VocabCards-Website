@@ -1,4 +1,4 @@
 <template>
-    <h1>AccountView</h1>
+    <h1>LearnComponent</h1>
     <!-- TODO -->
 </template>

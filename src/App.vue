@@ -1,11 +1,9 @@
+<script setup lang="ts">
+import MainNavbarComponent from '@/components/navbars/MainNavbarComponent.vue';
+</script>
+
 <template>
-    <nav>
-        <router-link :to="{ name: 'HomeView' }">Home</router-link> |
-        <router-link :to="{ name: 'AppView' }">App</router-link> |
-        <router-link :to="{ name: 'LoginView' }">Login</router-link> |
-        <router-link :to="{ name: 'RegisterView' }">Register</router-link> |
-        <router-link :to="{ name: 'AccountView' }">Account</router-link>
-    </nav>
+    <main-navbar-component />
     <router-view />
 </template>
 
@@ -15,6 +13,5 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
 }
 </style>

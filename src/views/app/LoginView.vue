@@ -6,6 +6,7 @@ const password = ref(null);
 
 const login = () => {
     console.log("login with ", username.value, password.value);
+    // TODO login
 };
 </script>
 

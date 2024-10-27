@@ -11,6 +11,7 @@ const register = () => {
         return;
     }
     console.log("register with ", username.value, password.value);
+    // TODO register
 };
 </script>
 
