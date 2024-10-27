@@ -1,42 +1,38 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-import LoginView from '@/views/LoginView.vue'
-import RegisterView from '@/views/RegisterView.vue'
-import AccountView from '@/views/AccountView.vue'
+import LoginView from '@/views/app/LoginView.vue'
+import RegisterView from '@/views/app/RegisterView.vue'
+import AccountView from '@/views/app/AccountView.vue'
 import AppView from '@/views/app/AppView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
+import HomeView from '@/views/HomeView.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
         name: 'HomeView',
-        component: HomeView
+        component: HomeView,
     },
     {
-        path: '/login',
+        path: '/app/',
+        name: 'AppView',
+        component: AppView,
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/app/login',
         name: 'LoginView',
         component: LoginView
     },
     {
-        path: '/register',
+        path: '/app/register',
         name: 'RegisterView',
         component: RegisterView
     },
     {
-        path: '/account',
+        path: '/app/account',
         name: 'AccountView',
         component: AccountView,
-        meta: {
-            requiresAuth: true
-        }
-    },
-    {
-        path: '/app',
-        name: 'AppView',
-        component: AppView,
-        meta: {
-            requiresAuth: true
-        }
+        meta: { requiresAuth: true }
     },
     {
         path: '/:pathMatch(.*)*',
@@ -52,7 +48,8 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
         // TODO Check if logged in
-        next({ name: "LoginView" });
+        // next({ name: "LoginView" });
+        next();
     }
     else {
         next();
