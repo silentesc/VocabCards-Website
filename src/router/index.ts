@@ -5,6 +5,7 @@ import AccountView from '@/views/AccountView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import HomeView from '@/views/HomeView.vue'
 import CollectionsView from '@/views/app/CollectionsView.vue'
+import CollectionView from '@/views/app/CollectionView.vue'
 import LearnView from '@/views/app/LearnView.vue'
 import SettingsView from '@/views/app/SettingsView.vue'
 
@@ -18,6 +19,12 @@ const routes: Array<RouteRecordRaw> = [
         path: '/app/collections',
         name: 'CollectionsView',
         component: CollectionsView,
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/app/collection/:id',
+        name: 'CollectionView',
+        component: CollectionView,
         meta: { requiresAuth: true }
     },
     {

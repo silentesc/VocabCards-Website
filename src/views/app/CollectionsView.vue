@@ -1,6 +1,48 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+interface Collection {
+    id: number;
+    name: string;
+}
+
+const collections = ref([
+    {
+        id: 1,
+        name: "Russian",
+    },
+    {
+        id: 2,
+        name: "English",
+    },
+    {
+        id: 3,
+        name: "Spanish",
+    },
+    {
+        id: 4,
+        name: "Japanese",
+    },
+    {
+        id: 5,
+        name: "German",
+    },
+    {
+        id: 6,
+        name: "Very long name for collection that takes multiple lines",
+    },
+]);
+
+/* Methods */
 const openAddCollectionModal = () => {
     return;
+}
+
+const openCollection = (collection: Collection) => {
+    router.push({ name: "CollectionView", params: { id: collection.id } });
 }
 </script>
 
@@ -8,34 +50,9 @@ const openAddCollectionModal = () => {
     <!-- TODO -->
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
-                <div class="card bg-dark text-light" @click="openAddCollectionModal">
-                    <p class="card-text">Russian</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card bg-dark text-light" @click="openAddCollectionModal">
-                    <p class="card-text">English</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card bg-dark text-light" @click="openAddCollectionModal">
-                    <p class="card-text">Spanish</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card bg-dark text-light" @click="openAddCollectionModal">
-                    <p class="card-text">Japanese</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card bg-dark text-light" @click="openAddCollectionModal">
-                    <p class="card-text">German</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card bg-dark text-light" @click="openAddCollectionModal">
-                    <p class="card-text">Very long name for collection that takes multiple lines</p>
+            <div class="col-md-3" v-for="collection in collections" :key="collection.id">
+                <div class="card bg-dark text-light" @click="openCollection(collection)">
+                    <p class="card-text">{{ collection.name }}</p>
                 </div>
             </div>
 
