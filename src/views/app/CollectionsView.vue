@@ -4,11 +4,6 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
-interface Collection {
-    id: number;
-    name: string;
-}
-
 const collections = ref([
     {
         id: 1,
@@ -41,8 +36,8 @@ const openAddCollectionModal = () => {
     return;
 }
 
-const openCollection = (collection: Collection) => {
-    router.push({ name: "CollectionView", params: { id: collection.id } });
+const openCollection = (collectionId: number) => {
+    router.push({ name: "CollectionView", params: { id: collectionId } });
 }
 </script>
 
@@ -51,7 +46,7 @@ const openCollection = (collection: Collection) => {
     <div class="container">
         <div class="row">
             <div class="col-md-3" v-for="collection in collections" :key="collection.id">
-                <div class="card bg-dark text-light" @click="openCollection(collection)">
+                <div class="card bg-dark text-light" @click="openCollection(collection.id)">
                     <p class="card-text">{{ collection.name }}</p>
                 </div>
             </div>
