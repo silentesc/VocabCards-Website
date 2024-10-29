@@ -22,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
         meta: { requiresAuth: true }
     },
     {
-        path: '/app/collection/:id',
+        path: '/app/collections/:id',
         name: 'CollectionView',
         component: CollectionView,
         meta: { requiresAuth: true }
