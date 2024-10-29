@@ -11,7 +11,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link"><router-link class="router-link-inactive"
-                                :to="{ name: 'AppView' }">App</router-link></a>
+                                :to="{ name: 'CollectionsView' }">App</router-link></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"><router-link class="router-link-inactive"

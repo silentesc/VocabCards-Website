@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import LoginView from '@/views/app/LoginView.vue'
-import RegisterView from '@/views/app/RegisterView.vue'
-import AccountView from '@/views/app/AccountView.vue'
-import AppView from '@/views/app/AppView.vue'
+import LoginView from '@/views/LoginView.vue'
+import RegisterView from '@/views/RegisterView.vue'
+import AccountView from '@/views/AccountView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import HomeView from '@/views/HomeView.vue'
+import CollectionsView from '@/views/app/CollectionsView.vue'
+import LearnView from '@/views/app/LearnView.vue'
+import SettingsView from '@/views/app/SettingsView.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -13,23 +15,35 @@ const routes: Array<RouteRecordRaw> = [
         component: HomeView,
     },
     {
-        path: '/app',
-        name: 'AppView',
-        component: AppView,
+        path: '/app/collections',
+        name: 'CollectionsView',
+        component: CollectionsView,
         meta: { requiresAuth: true }
     },
     {
-        path: '/app/login',
+        path: '/app/learn',
+        name: 'LearnView',
+        component: LearnView,
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/app/settings',
+        name: 'SettingsView',
+        component: SettingsView,
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/login',
         name: 'LoginView',
         component: LoginView
     },
     {
-        path: '/app/register',
+        path: '/register',
         name: 'RegisterView',
         component: RegisterView
     },
     {
-        path: '/app/account',
+        path: '/account',
         name: 'AccountView',
         component: AccountView,
         meta: { requiresAuth: true }
