@@ -8,6 +8,7 @@ import CollectionsView from '@/views/app/CollectionsView.vue'
 import CollectionView from '@/views/app/CollectionView.vue'
 import LearnView from '@/views/app/LearnView.vue'
 import SettingsView from '@/views/app/SettingsView.vue'
+import VocabularyItemView from '@/views/app/VocabularyItemView.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -22,9 +23,15 @@ const routes: Array<RouteRecordRaw> = [
         meta: { requiresAuth: true }
     },
     {
-        path: '/app/collections/:id',
+        path: '/app/collections/:collectionId/vocabulary-items',
         name: 'CollectionView',
         component: CollectionView,
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/app/collections/:collectionId/vocabulary-items/:vocabularyItemId',
+        name: 'VocabularyItemView',
+        component: VocabularyItemView,
         meta: { requiresAuth: true }
     },
     {

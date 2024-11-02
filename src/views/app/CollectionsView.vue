@@ -37,7 +37,7 @@ const openAddCollectionModal = () => {
 }
 
 const openCollection = (collectionId: number) => {
-    router.push({ name: "CollectionView", params: { id: collectionId } });
+    router.push({ name: "CollectionView", params: { collectionId: collectionId } });
 }
 </script>
 

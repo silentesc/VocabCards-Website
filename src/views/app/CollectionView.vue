@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+
+const router = useRouter();
+const route = useRoute();
 
 const collection = ref({
     id: 1,
@@ -9,7 +13,7 @@ const collection = ref({
             id: 1,
             front: "Front",
             back: "Back",
-            info: "Info for Vocabulary",
+            info: "Info for Vocabulary Item",
             times_solved: 122,
             times_failed: 43,
             avg_millis_to_solve: 4.2,
@@ -22,7 +26,7 @@ const collection = ref({
             id: 2,
             front: "Front2",
             back: "Back2",
-            info: "Info for Vocabulary",
+            info: "Info for Vocabulary Item",
             times_solved: 434,
             times_failed: 210,
             avg_millis_to_solve: 7.6,
@@ -35,7 +39,7 @@ const collection = ref({
             id: 3,
             front: "Front3",
             back: "Back3",
-            info: "Info for Vocabulary",
+            info: "Info for Vocabulary Item",
             times_solved: 1023,
             times_failed: 32,
             avg_millis_to_solve: 0.8,
@@ -48,8 +52,12 @@ const collection = ref({
 });
 
 /* Methods */
-const openVocable = (vocableId: number) => {
-    console.log("Opening vocable", vocableId);
+const openAddocabularyItemModal = () => {
+    return;
+}
+
+const openVocabularyItem = (vocabularyItemId: number) => {
+    router.push({ name: "VocabularyItemView", params: { collectionId: route.params.collectionId, vocabularyItemId: vocabularyItemId } });
 }
 </script>
 
@@ -57,9 +65,15 @@ const openVocable = (vocableId: number) => {
     <h1>{{ collection.name }}</h1>
 
     <div class="list-group">
-        <button type="button" class="list-group-item list-group-item-action"
-            v-for="vocable in collection.vocables" :key="vocable.id" @click="openVocable(vocable.id)">
+        <button type="button" class="list-group-item list-group-item-action" v-for="vocable in collection.vocables"
+            :key="vocable.id" @click="openVocabularyItem(vocable.id)">
             {{ vocable.front }}
+        </button>
+    </div>
+    <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action list-group-item-add"
+            @click="openAddocabularyItemModal">
+            <h4>+</h4>
         </button>
     </div>
 </template>
@@ -77,12 +91,23 @@ const openVocable = (vocableId: number) => {
     background-color: #464c55;
     color: #fff;
 }
+
 .list-group-item:hover {
     background-color: #606874;
     color: white;
 }
+
 .list-group-item:focus {
     background-color: #606874;
     color: white;
+}
+
+.list-group-item-add {
+    background-color: #565d68;
+}
+
+.list-group-item-add h4 {
+    margin: 0;
+    padding: 0;
 }
 </style>
