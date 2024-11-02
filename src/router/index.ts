@@ -4,11 +4,11 @@ import RegisterView from '@/views/RegisterView.vue'
 import AccountView from '@/views/AccountView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import HomeView from '@/views/HomeView.vue'
-import CollectionsView from '@/views/app/CollectionsView.vue'
-import CollectionView from '@/views/app/CollectionView.vue'
+import CollectionsView from '@/views/app/collections/CollectionsView.vue'
+import CollectionView from '@/views/app/collections/CollectionView.vue'
 import LearnView from '@/views/app/LearnView.vue'
 import SettingsView from '@/views/app/SettingsView.vue'
-import VocabularyItemView from '@/views/app/VocabularyItemView.vue'
+import VocabularyItemView from '@/views/app/collections/VocabularyItemView.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
