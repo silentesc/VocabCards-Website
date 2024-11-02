@@ -6,8 +6,8 @@ import NotFoundView from '@/views/NotFoundView.vue'
 import HomeView from '@/views/HomeView.vue'
 import CollectionsView from '@/views/app/collections/CollectionsView.vue'
 import CollectionView from '@/views/app/collections/CollectionView.vue'
-import LearnView from '@/views/app/LearnView.vue'
-import SettingsView from '@/views/app/SettingsView.vue'
+import LearnView from '@/views/app/learn/LearnView.vue'
+import SettingsView from '@/views/app/settings/SettingsView.vue'
 import VocabularyItemView from '@/views/app/collections/VocabularyItemView.vue'
 
 const routes: Array<RouteRecordRaw> = [
